@@ -13,12 +13,9 @@ A small CLI to walk your project, pick out the files that matter, format them as
 * Emits output like:
 
 ```markdown
-```
-
 # --- path/to/file.py ---
 
 <file contents>
-```
 ```
 
 * Copies the whole thing to your clipboard and prints a size/model-fit summary
@@ -40,6 +37,31 @@ copycode
 ```
 
 The entrypoint is `copycode.__main__.py`, which wires the CLI to the subcommands.
+
+If you install the release, do this:
+
+**Windows**
+Place `copycode.exe` (or the installed script) in your Python `Scripts` folder, for example:
+`C:\Users\<your-username>\AppData\Local\Programs\Python\Python312\Scripts`
+Make sure that folder is in your `PATH`.
+
+**Linux**
+Place the executable/script in `~/.local/bin/` (per-user) or `/usr/local/bin/` (system-wide):
+
+```bash
+chmod +x ~/.local/bin/copycode
+```
+
+Ensure that directory is in `$PATH`.
+
+**macOS**
+Place it in `/usr/local/bin/` (Intel) or `/opt/homebrew/bin/` (Apple Silicon):
+
+```bash
+chmod +x /usr/local/bin/copycode
+```
+
+Make sure that directory is in your shell’s `PATH`.
 
 ---
 
@@ -203,12 +225,8 @@ copycode --dir-folders-only
      → emit a Markdown block:
 
    ```markdown
-   ```
-
    # --- path/to/file.ext ---
-
    <file contents>
-   ```
    ```
 
 5. Concatenate all parts with blank lines
